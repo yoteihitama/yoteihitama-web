@@ -73,7 +73,7 @@ function UrlEncoderDecoder() {
                     />
                 </Grid>
             </Grid>
-            <Grid item spacing={1}>
+            <Grid item>
                 <ToggleButtonGroup
                     color="primary"
                     value={mode.toString()}

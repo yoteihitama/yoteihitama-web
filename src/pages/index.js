@@ -1,9 +1,9 @@
 import UrlEncoderDecoder from "@/components/UrlEncoderDecoder";
-import { Container } from "@mui/material";
+import { Container, Grid } from "@mui/material";
 
 function HomePage() {
     return (
-        <Container maxWidth="md">
+        <Container maxWidth="lg">
             <UrlEncoderDecoder />
         </Container>
     );

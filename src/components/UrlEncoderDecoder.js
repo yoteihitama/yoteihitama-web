@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { TextField, Grid, Typography, RadioGroup, FormControlLabel, Radio, FormControl } from "@mui/material";
+import { TextField, Grid, Typography, ToggleButtonGroup, ToggleButton } from "@mui/material";
 
 const EncodeMode = {
     ENCODE: {
@@ -38,11 +38,13 @@ function UrlEncoderDecoder() {
     };
 
     return (
-        <Grid container direction="column" justifyContent="center">
-            <Typography variant="h3" align="center">
-                URL Encoder/Decoder
-            </Typography>
-            <Grid container item alignItems="center" spacing={2}>
+        <Grid container direction="column" alignItems="center" justifyContent="center" spacing={3}>
+            <Grid item>
+                <Typography variant="h3" align="center">
+                    URL Encoder/Decoder
+                </Typography>
+            </Grid>
+            <Grid container item alignItems="center" spacing={3}>
                 <Grid item xs={6}>
                     <TextField
                         label="Input"
@@ -71,24 +73,23 @@ function UrlEncoderDecoder() {
                     />
                 </Grid>
             </Grid>
-            <Grid item>
-                <FormControl>
-                    <RadioGroup
-                        value={mode.toString()}
-                        onChange={(e) => {
-                            const encodeMode = EncodeMode[e.target.value];
-                            if (mode === encodeMode) {
-                                return;
-                            }
-                            setMode(encodeMode);
-                            switchInOut();
-                        }}
-                        row
-                    >
-                        <FormControlLabel control={<Radio />} value={EncodeMode.ENCODE.toString()} label="Encode" />
-                        <FormControlLabel control={<Radio />} value={EncodeMode.DECODE.toString()} label="Decode" />
-                    </RadioGroup>
-                </FormControl>
+            <Grid item spacing={1}>
+                <ToggleButtonGroup
+                    color="primary"
+                    value={mode.toString()}
+                    exclusive
+                    onChange={(e) => {
+                        const encodeMode = EncodeMode[e.target.value];
+                        if (mode === encodeMode) {
+                            return;
+                        }
+                        setMode(encodeMode);
+                        switchInOut();
+                    }}
+                >
+                    <ToggleButton value={EncodeMode.ENCODE.toString()}>Encode</ToggleButton>
+                    <ToggleButton value={EncodeMode.DECODE.toString()}>Decode</ToggleButton>
+                </ToggleButtonGroup>
             </Grid>
         </Grid>
     );

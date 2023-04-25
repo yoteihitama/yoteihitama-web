@@ -127,7 +127,7 @@ function UrlEncoderDecoder() {
                         characters differently. URL encoding ensures that the URL will be interpreted consistently across different platforms. Security: URL
                         encoding helps to prevent security vulnerabilities such as SQL injection attacks or cross-site scripting (XSS) attacks. Search engine
                         optimization: URLs that are properly encoded can help to improve search engine rankings by providing relevant information about the
-                        content of the page. By providing users with a clear explanation of what URL encoding is and why it's important, you can help them
+                        content of the page. By providing users with a clear explanation of what URL encoding is and why it is important, you can help them
                         better understand how your URL Encode Decode web service can benefit them.
                     </Typography>
                 </Box>
